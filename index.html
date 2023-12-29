@@ -16,18 +16,35 @@
  <label for="image">image:</label>         
 <input type="text" id="image" name="image" required>         <br>       
   <label for="body">Body:</label>         <textarea id="body" name="body" rows="4" required></textarea>         <br>         
-  <input type="submit" value="Send">     </form>     <div id="result" style="display: none;">         
+  <input type="submit" value="Send">
+     </form>   
+	 <div id="result" style="display: none;">  
+
   <h2>Result:</h2>         
   <textarea id="resultText" rows="4" readonly></textarea>         
-  <button onclick="copyToClipboard()">Copy to Clipboard</button>     </div>    
+  <button onclick="copyToClipboard()">Copy to Clipboard</button>    
+
+  </div>    
   <script>   
 //git test3//
 
   document.getElementById('myForm').addEventListener('submit', function (event) {             event.preventDefault(); 
  document.getElementById('myForm').style.display = 'none';
 
-  var title = document.getElementById('title').value;             var body = document.getElementById('body').value;   var img = document.getElementById('image').value;                        
-  var resultString = "{Title: " + title + "\nBody: " + body+ "\nImage: " + img+"}";                        document.getElementById('resultText').value = resultString;             document.getElementById('result').style.display = 'block';         });         function copyToClipboard() {             var resultText = document.getElementById('resultText');             resultText.select();             document.execCommand('copy');             alert('Copied to clipboard!');         }     </script>
+  var title = document.getElementById('title').value;   
+  var body = document.getElementById('body').value;   
+  var img = document.getElementById('image').value;                        
+  var resultString = "{Title: " + title + "\nBody: " + body+ "\nImage: " + img+"}";                    
+  document.getElementById('resultText').value = resultString;          
+  document.getElementById('result').style.display = 'block';         });      
+  function copyToClipboard() {             
+  var resultText = document.getElementById('resultText');          
+  resultText.select();            
+  document.execCommand('copy');           
+  alert('Copied to clipboard!');   
+document.getElementById('result').style.display = 'none';  
+document.getElementById('myForm').style.display = 'block'; 
+  }     </script>
 
     <div id="transactionDetails" style="background-color: #f5f5f5; padding: 20px; border: 1px solid #ddd; margin: 10px;">
         <h2>Transaction Details</h2>
